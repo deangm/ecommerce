@@ -9,29 +9,43 @@ import {
 import './App.css';
 import ProductsPage from './components/ProductsPage'
 import store from './store'
-
-
 import { createStore } from 'redux'
 
 
 
-  ;
-
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      loading: true
+    }
+  }
 
   componentDidMount() {
     fetch("https://my-json-server.typicode.com/tdmichaelis/typicode/products").then(
-      (res) => {console.log(res);}
-    )
+      (res) => { return res.json() }
+    ).then((response) => {
+      response.forEach((p) => {
+        store.dispatch({
+          type: "ADD_PRODUCT",
+          product: p
+        }) 
+      })
+      this.setState({
+        loading: false
+      })
+    })
   }
 
   render() {
-
+    if(!this.state.loading){
+      return <div>Loaded</div>
+    }
     return (
-      <ProductsPage />
+      <div>Loading</div>
     );
   }
-
+C
 
 }
 
