@@ -8,13 +8,15 @@ import {
 
 import './App.css';
 import ProductsPage from './components/ProductsPage'
+import Cart from './components/Cart'
+import Login from './components/Login'
 import store from './store'
 import { createStore } from 'redux'
 
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       loading: true
@@ -29,7 +31,7 @@ class App extends React.Component {
         store.dispatch({
           type: "ADD_PRODUCT",
           product: p
-        }) 
+        })
       })
       this.setState({
         loading: false
@@ -38,18 +40,39 @@ class App extends React.Component {
   }
 
   render() {
-    if(!this.state.loading){
-      console.log(store.getState().products)
+    if (!this.state.loading) {
       return (
-          <ProductsPage products = {store.getState().products} />
+        <div>
+        <Router>
+          <Link to ="/Login">
+            Login
+          </Link>
+          <Link to="/ProductsPage">
+            Products
+          </Link>
+          <Link to ="/Cart">
+            Cart
+          </Link>
+  
+        <Switch>
+          <Route path ="/Login" component = {Login} />
+         <Route path="/ProductsPage" render={() => (<ProductsPage products = {store.getState().products}/>)} />
+         <Route path ="/Cart" component = {Cart}/>
+        </Switch>
+        </Router>
+       
+        </div>
+
+    
         )
     }
-    return (
-      <div>Loading</div>
-    );
+    else{
+      return (
+        <div>Loading</div>
+      );
+    }
+   
   }
-C
-
 }
 
 export default App;

@@ -9,7 +9,7 @@ class ProductsPage extends React.Component{
     renderProducts (){
         return this.props.products.map((p, index) => {
             return (
-                <Product title = {p.title} image = {p.img} key={index} rating = {p.rating} price = {p.price} description = {p.description}/>
+                <Product product = {p}/>
             )
         })
     }
