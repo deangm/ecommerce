@@ -1,6 +1,14 @@
 import React from 'react';
-import { CoverageMap } from 'istanbul-lib-coverage';
+import {
+    BrowserRouter as Router,
+    Link,
+    Switch,
+    Route
+  } from 'react-router-dom'
+  
+
 import store from '../store';
+import ProductInfo from './ProductInfo'
 
 
 class Product extends React.Component {
@@ -41,7 +49,13 @@ class Product extends React.Component {
                     <h5 class="card-title">{title}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div style = {divStyles}>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <div className = "btn primary-btn">
+                       
+                            <Link to={`/product/${this.props.product.id}`}>
+                                Info
+                            </Link>
+                      
+                        </div>
                         <a onClick = {this.handleAddCart} className = "btn btn-secondary">Add Cart</a>
                     </div>
                   

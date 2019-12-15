@@ -8,6 +8,7 @@ import {
 
 import './App.css';
 import ProductsPage from './components/ProductsPage'
+import ProductInfo from './components/ProductInfo'
 import Cart from './components/Cart'
 import Login from './components/Login'
 import store from './store'
@@ -43,37 +44,37 @@ class App extends React.Component {
     if (!this.state.loading) {
       return (
         <div>
-        <Router>
-          <Link to ="/Login">
-            Login
+          <Router>
+            <Link to="/Login">
+              Login
           </Link>
-          <Link to="/ProductsPage">
-            Products
+            <Link to="/ProductsPage">
+              Products
           </Link>
-          <Link to ="/Cart">
-            Cart
+            <Link to="/Cart">
+              Cart
           </Link>
-  
-        <Switch>
-          <Route path ="/Login" component = {Login} />
-         <Route path="/ProductsPage" 
-         render={() => (<ProductsPage products = {store.getState().products}/>)} />
-         <Route path ="/Cart"
-         render={() => (<Cart products = {store.getState().cart}/>)} />
-        </Switch>
-        </Router>
-       
+            <Switch>
+              <Route path="/Login" component={Login} />
+              <Route path="/ProductsPage"
+                render={() => (<ProductsPage products={store.getState().products} />)} />
+              <Route path="/Cart"
+                render={() => (<Cart products={store.getState().cart} />)} />
+              <Route path="/product/:id" component={ProductInfo} />
+            </Switch>
+          </Router>
+
         </div>
 
-    
-        )
+
+      )
     }
-    else{
+    else {
       return (
         <div>Loading</div>
       );
     }
-   
+
   }
 }
 
