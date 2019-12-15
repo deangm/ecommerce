@@ -39,7 +39,10 @@ class App extends React.Component {
 
   render() {
     if(!this.state.loading){
-      return <div>Loaded</div>
+      console.log(store.getState().products)
+      return (
+          <ProductsPage products = {store.getState().products} />
+        )
     }
     return (
       <div>Loading</div>
