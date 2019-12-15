@@ -56,8 +56,10 @@ class App extends React.Component {
   
         <Switch>
           <Route path ="/Login" component = {Login} />
-         <Route path="/ProductsPage" render={() => (<ProductsPage products = {store.getState().products}/>)} />
-         <Route path ="/Cart" component = {Cart}/>
+         <Route path="/ProductsPage" 
+         render={() => (<ProductsPage products = {store.getState().products}/>)} />
+         <Route path ="/Cart"
+         render={() => (<Cart products = {store.getState().cart}/>)} />
         </Switch>
         </Router>
        
