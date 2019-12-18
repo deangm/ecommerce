@@ -11,7 +11,7 @@ class ProductInfo extends React.Component{
     render(){
 
         const product = this.findProduct();
-        console.log(product)
+
         
         return(
             <div>{product[0].title}</div>

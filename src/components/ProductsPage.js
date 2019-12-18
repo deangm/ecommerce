@@ -9,7 +9,7 @@ class ProductsPage extends React.Component{
     renderProducts (){
         return this.props.products.map((p, index) => {
             return (
-                <Product product = {p}/>
+                <Product product = {p} key = {index}/>
             )
         })
     }

@@ -9,7 +9,7 @@ class Cart extends React.Component{
     render(){
         
         const cartItems = this.renderCart();
-        console.log(cartItems.length);
+     
       
         if(!cartItems.length == 0){
             return(

@@ -55,6 +55,7 @@ class App extends React.Component {
               Cart
           </Link>
             <Switch>
+              <Route exact path = "/" component = {Login} />
               <Route path="/Login" component={Login} />
               <Route path="/ProductsPage"
                 render={() => (<ProductsPage products={store.getState().products} />)} />

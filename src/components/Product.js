@@ -20,12 +20,12 @@ class Product extends React.Component {
             product: this.props.product
 
         })
-        console.log(store.getState());
+      
     }
     
     
     render() {
-        console.log(this.props);
+       
         const { title, img, rating, price, description } = this.props.product;
         let cardStyles = {
             width: '18rem',
@@ -43,11 +43,11 @@ class Product extends React.Component {
         }
         return (
 
-            <div class="card" style={cardStyles} >
-                <img style={imgStyles} src={img} class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">{title}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="card" style={cardStyles} >
+                <img style={imgStyles} src={img} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
+                    
                     <div style = {divStyles}>
                         <div className = "btn primary-btn">
                        
