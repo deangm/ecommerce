@@ -12,13 +12,13 @@ class Login extends React.Component {
         }
         store.subscribe(() => this.forceUpdate())
     }
-    
+
     handleLogin = () => {
-       store.dispatch({
-           type: "LOGIN",
-           username: this.state.username,
-           password: this.state.password
-       })
+        store.dispatch({
+            type: "LOGIN",
+            username: this.state.username,
+            password: this.state.password
+        })
     }
 
     userNameHandler = (e) => {
@@ -34,27 +34,40 @@ class Login extends React.Component {
     }
 
     render() {
-  
-        if(!store.getState().loggedIn.activeUser){
-            return(
-                <div>
-                    <div>
-                        <label>UserName:</label>
-                        <input onChange = {this.userNameHandler} value = {this.state.username} placeholder={"username"}></input>
-                        <label>Password</label>
-                        <input onChange = {this.passwordHandler} value = {this.state.password} placeholder={"password"}></input>
+
+        if (!store.getState().loggedIn.activeUser) {
+            return (
+
+
+
+
+
+
+
+                <div className = "cont">
+                    <div className = "subTitle">
+                        Welcome Back!
                     </div>
-                    <button onClick = {this.handleLogin}>Log In</button>
+
+                <div className = "loginCont">
+                    <div className = "inputCont">
+                        <label>UserName:</label>
+                        <input onChange={this.userNameHandler} value={this.state.username} placeholder={"username"}></input>
+                        <label>Password</label>
+                        <input onChange={this.passwordHandler} value={this.state.password} placeholder={"password"}></input>
+                    </div>
+                    <button className = "btn btn-primary" onClick={this.handleLogin}>Log In</button>
                 </div>
-             
+                </div>
+
 
             )
         }
-        
-        
-        
+
+
+
         return (
-            <Redirect to = "/ProductsPage" />
+            <Redirect to="/ProductsPage" />
         )
     }
 }

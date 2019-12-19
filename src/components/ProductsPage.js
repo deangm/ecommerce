@@ -15,7 +15,17 @@ class ProductsPage extends React.Component{
     }
     render(){
         return(
-            <div className = "d-flex container flex-wrap justify-content-between">{this.renderProducts()}</div>
+            <div >
+            
+            
+            <div className="title">
+                Product Page
+            </div>
+
+            
+           <div className = "d-flex container flex-wrap justify-content-between"> {this.renderProducts()}</div>
+            
+            </div>
         )
         
     }

@@ -1,0 +1,115 @@
+
+
+
+$primaryColor: lightblue;
+$lightPrimary: #F8BBD0;
+$darkPrimary: #C2185B;
+$secondaryColor: #03A9F4;
+$primaryText: #212121;
+$secondaryText: #757575;
+$whiteText: #FFFFFF;
+
+
+
+#root{
+  height:100%
+}
+
+
+.card {
+    width: 18rem;
+    margin: 40px;
+    border-radius: 10px;
+    padding:20px;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 20px auto;
+  }
+  
+  body, html {
+    background-color: $primaryColor;
+    margin: 0;
+    padding: 0;
+    height:100%;
+  }
+  
+  .buttonCont{
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  .link{
+    background-color: lightblue;
+  }
+  .btn{
+    width: 40%;
+  }
+
+  .title{
+    width: 100%;
+    background: white;
+    padding: 20px;
+    font-size:40px;
+    background-color:$secondaryColor;
+    text-align:center;
+  }
+
+  .btn-primary{
+    background-color: $secondaryColor;
+    color: $whiteText;
+    border:none;
+  }
+  .btn-secondary{
+    background-color:$lightPrimary;
+    border:none;
+    color:$primaryText;
+  
+  }
+ #navbarNav{
+   justify-content: flex-end;
+   
+ }
+ nav a{
+   color:white;
+ }
+ nav{
+   background-color:$darkPrimary;
+ }
+
+
+ .cont{
+   height:100%;
+   margin-top:100px;
+   .subTitle{
+     text-align:center;
+     font-size:40px;
+     margin-bottom:10px;
+   }
+ 
+ 
+  }
+
+
+ .loginCont{
+  text-align: center;
+  border: 1px solid black;
+  width:30%;
+  margin: auto;
+  padding:50px;
+  background-color:white;
+  border-radius:10px;
+    .inputCont{
+      flex-direction: column;
+      justify-content: center;;
+      align-items: center;
+      display:flex;
+      input{
+        margin-bottom:20px;
+        border-radius: 5px;
+      }
+    }
+ }

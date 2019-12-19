@@ -22,8 +22,7 @@ const reducer = combineReducers({
 
 function loginReducer(state = accounts, action){
     const username = action.username;
-    const pass = action.password;
-
+   
     switch(action.type){
         case "LOGIN":
             state.users.forEach((obj) => {
