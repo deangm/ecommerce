@@ -1,11 +1,25 @@
 #root {
   height: 100%; }
 
-.card {
+.productCont .card {
   width: 18rem;
   margin: 40px;
   border-radius: 10px;
   padding: 20px; }
+
+.productInfoCont {
+  display: flex;
+  justify-content: center;
+  padding: 50px; }
+  .productInfoCont .card {
+    padding: 0 30px; }
+  .productInfoCont img {
+    height: 300px;
+    padding: 10px; }
+  .productInfoCont .col-md-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 img {
   width: 100px;
@@ -59,10 +73,11 @@ nav {
 .cont {
   height: 100%;
   margin-top: 100px; }
-  .cont .subTitle {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 10px; }
+
+.subTitle {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px; }
 
 .loginCont {
   text-align: center;
@@ -80,3 +95,14 @@ nav {
     .loginCont .inputCont input {
       margin-bottom: 20px;
       border-radius: 5px; }
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 20px; }
+  .search input {
+    border-radius: 5px; }
+  .search button {
+    width: 80px;
+    background-color: #757575; }

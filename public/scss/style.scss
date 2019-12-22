@@ -15,19 +15,39 @@ $whiteText: #FFFFFF;
   height:100%
 }
 
-
-.card {
+.productCont{
+  .card {
     width: 18rem;
     margin: 40px;
     border-radius: 10px;
     padding:20px;
   }
+}
+.productInfoCont{
+  display: flex;
+  justify-content: center;
+  padding:50px;
+  .card{
+    
+    padding: 0 30px;
+  }
+  img{
+    height:300px;
+    padding:10px;
+  }
+  .col-md-8{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+}
   
   img {
     width: 100px;
     height: 100px;
     object-fit: contain;
     margin: 20px auto;
+    
   }
   
   body, html {
@@ -84,13 +104,11 @@ $whiteText: #FFFFFF;
  .cont{
    height:100%;
    margin-top:100px;
-   .subTitle{
-     text-align:center;
-     font-size:40px;
-     margin-bottom:10px;
-   }
- 
- 
+  }
+  .subTitle{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:10px;
   }
 
 
@@ -112,4 +130,18 @@ $whiteText: #FFFFFF;
         border-radius: 5px;
       }
     }
+ }
+
+ .search{
+   display:flex;
+   justify-content: flex-end;
+   margin-top: 20px;
+   margin-right: 20px;
+   input{
+     border-radius: 5px;
+   }
+   button{
+     width: 80px;
+     background-color: $secondaryText;
+   }
  }

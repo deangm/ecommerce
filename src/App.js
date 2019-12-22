@@ -22,6 +22,7 @@ class App extends React.Component {
     this.state = {
       loading: true
     }
+    
   }
 
   componentDidMount() {
@@ -38,6 +39,7 @@ class App extends React.Component {
         loading: false
       })
     })
+    store.subscribe(() => this.forceUpdate())
   }
 
   render() {
@@ -48,7 +50,7 @@ class App extends React.Component {
           <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="/">Ecommerce</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon">A</span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">

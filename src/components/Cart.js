@@ -1,27 +1,54 @@
 import React from 'react'
-import Product from './Product'
-class Cart extends React.Component{
-    
+import CartItem from './CartItem'
+import store from '../store'
+
+class Cart extends React.Component {
+
     renderCart = () => {
-        return this.props.products.map(p => <Product product = {p} />)
+        return this.props.products.map(p => <CartItem product={p} />)
     }
-    
-    render(){
-        
+
+    render() {
         const cartItems = this.renderCart();
-     
-      
-        if(!cartItems.length == 0){
-            return(
-                <div>{cartItems}</div>
+
+        let total = 0;
+
+         store.getState().cart.forEach(p => total += p.price)
+
+
+        if (!cartItems.length == 0) {
+            return (
+                <div >
+
+
+                    <div>
+                        <div className="title">
+                            My Cart
+                         </div>
+                        <div>
+                            Total: {total}
+                         </div>
+                    </div>
+
+
+                    <div className="d-flex container flex-wrap justify-content-between"> {cartItems}</div>
+
+                </div>
             )
         }
-        else{
-            return(
-                <div>Nothing in Cart</div>
+        else {
+            return (
+                <div>
+                    <div>
+                        <div className="title">
+                            My Cart
+                         </div>
+                    </div>
+                    <div className="subTitle">Nothing in Cart</div>
+                </div>
             )
         }
-      
+
     }
 }
 

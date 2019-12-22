@@ -63,6 +63,14 @@ function cartReducer (state = [], action){
                 else{
                     return state;
                 }
+        case "REMOVE_CARTITEM":
+            
+            let newState = state.filter((p) => {
+                console.log(p, action.product);
+                return p != action.product 
+            })
+            console.log(newState);
+            return newState
         default:
             return state;
     }
