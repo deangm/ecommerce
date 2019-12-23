@@ -38,6 +38,10 @@ function loginReducer(state = accounts, action) {
             else{
                 return state;
             }
+        case "CREATE_ACCOUNT":
+            console.log(action.newAccount);
+            let newState = state;
+            newState.users.push(action.newAccount)
         default:
             return state;
     }

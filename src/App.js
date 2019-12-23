@@ -47,10 +47,9 @@ class App extends React.Component {
     if (!this.state.loading) {
       return (
         <>
-        <div>{store.getState().loggedIn.activeUser}</div>
         <Router>
           <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand" href="/">Ecommerce</a>
+            <a className="navbar-brand" href="/">{store.getState().loggedIn.activeUser ?  `Log Out: ${store.getState().loggedIn.activeUser}` : "Not Logged In"} </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon">A</span>
             </button>

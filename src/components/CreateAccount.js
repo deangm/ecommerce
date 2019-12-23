@@ -2,42 +2,52 @@ import React from 'react'
 import store from "../store"
 
 class CreateAccount extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            account: {
-                username: "",
-                password: ""
-            }
+
+            username: "",
+            password: ""
+
         }
     }
-   
-   
-   handleCreateAccountClick = () => {
-        
-    store.dispatch({
+
+
+    handleCreateAccountClick = () => {
+
+        store.dispatch({
             type: "CREATE_ACCOUNT",
-            newAccount: this.state.account
-        })
-   }
-   
-   handleUsernameChange = (e) => {
-        this.setState({
-            account:{
-                username: e.target
+            newAccount: {
+                username: this.state.username,
+                password: this.state.password,
             }
         })
-   }
-   
+
+        console.log(store.getState().loggedIn)
+    }
+
+    handleUsernameChange = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+    handlePasswordChange = (e) => {
+        this.setState({
+
+            password: e.target.value
+
+        })
+    }
+
     render() {
         return (
             <div>
                 <div>
-                    <input placeholder="username"></input>
-                    <input placeholder="password"></input>
+                    <input value={this.state.username} onChange={this.handleUsernameChange} placeholder="username"></input>
+                    <input value={this.state.password} onChange={this.handlePasswordChange} placeholder="password"></input>
                 </div>
                 <div>
-                    <button>Create My Account</button>
+                    <button onClick={this.handleCreateAccountClick}>Create My Account</button>
                 </div>
             </div>
         )
