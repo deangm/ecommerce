@@ -4,14 +4,14 @@ import store from "../store"
 class ProductInfo extends React.Component {
 
     findProduct = () => {
-        return store.getState().products.filter(p => p.id == this.props.match.params.id
+        return store.getState().products.filter(p => p.id === this.props.match.params.id
         )
     }
 
     render() {
 
         const product = this.findProduct();
-        const { title, img, rating, price, description } = product[0];
+        const { title, img, rating, description } = product[0];
 
         let cardStyle = {
             maxWidth: "900px"
@@ -21,7 +21,7 @@ class ProductInfo extends React.Component {
                 <div className="card mb-3" style={cardStyle}>
                     <div className="row no-gutters">
                         <div className="col-md-4">
-                            <img src={img} className="card-img" alt="product image" />
+                            <img src={img} className="card-img" alt="product" />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">

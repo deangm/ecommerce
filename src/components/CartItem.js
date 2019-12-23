@@ -20,7 +20,7 @@ class CartItem extends React.Component {
     }
 
     render() {
-        const { title, img, rating, price, description } = this.props.product;
+        const { title, img} = this.props.product;
         return (
 
             <div className="productCont">
@@ -38,7 +38,7 @@ class CartItem extends React.Component {
                             </Link>
 
 
-                            <a onClick={this.handleRemoveCart} className="btn btn-secondary">Remove</a>
+                            <div> onClick={this.handleRemoveCart} className="btn btn-secondary">Remove</div>
                         </div>
 
                     </div>

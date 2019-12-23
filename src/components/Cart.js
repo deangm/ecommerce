@@ -5,7 +5,7 @@ import store from '../store'
 class Cart extends React.Component {
 
     renderCart = () => {
-        return this.props.products.map(p => <CartItem product={p} />)
+        return this.props.products.map((p, index) => <CartItem product={p} key={index} />)
     }
 
     render() {
@@ -16,7 +16,7 @@ class Cart extends React.Component {
          store.getState().cart.forEach(p => total += p.price)
 
 
-        if (!cartItems.length == 0) {
+        if (cartItems.length) {
             return (
                 <div >
 

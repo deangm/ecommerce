@@ -4,12 +4,12 @@ const accounts = {
     activeUser: "",
     users: [
         {
-           Mikey: {
-               password: "Hello",
-           }
+            username: "Mikey",
+            password: "Hello",
         }
+
     ]
-} 
+}
 
 
 const reducer = combineReducers({
@@ -20,24 +20,24 @@ const reducer = combineReducers({
 
 
 
-function loginReducer(state = accounts, action){
+function loginReducer(state = accounts, action) {
     const username = action.username;
-   
-    switch(action.type){
+
+    switch (action.type) {
         case "LOGIN":
-            state.users.forEach((obj) => {
-                if(obj.hasOwnProperty(action.username)){
-                    if(action.password == obj[username].password){
-                        
-                        let newState = state;
-                        newState.activeUser = username;
-                        return newState
-                    }
-                }
-                else{
-                    return state
+           let active = state.users.filter((user) => {
+                if(user.username == username && user.password == action.password){
+                    return user
                 }
             })
+            if(active.length){
+                let newState = state;
+                newState.activeUser = active[0].username
+                return newState
+            }
+            else{
+                return state;
+            }
         default:
             return state;
     }
@@ -53,21 +53,21 @@ function productReducer(state = [], action) {
     }
 }
 
-function cartReducer (state = [], action){
+function cartReducer(state = [], action) {
     switch (action.type) {
         case "ADD_CART":
-                let exists = state.filter(p => p == action.product);
-                if(exists.length == 0){
-                   return state.concat(action.product)
-                }
-                else{
-                    return state;
-                }
+            let exists = state.filter(p => p == action.product);
+            if (exists.length == 0) {
+                return state.concat(action.product)
+            }
+            else {
+                return state;
+            }
         case "REMOVE_CARTITEM":
-            
+
             let newState = state.filter((p) => {
                 console.log(p, action.product);
-                return p != action.product 
+                return p != action.product
             })
             console.log(newState);
             return newState

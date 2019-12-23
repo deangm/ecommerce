@@ -9,6 +9,7 @@ import {
 import './App.css';
 import ProductsPage from './components/ProductsPage'
 import ProductInfo from './components/ProductInfo'
+import CreateAccount from './components/CreateAccount'
 import Cart from './components/Cart'
 import Login from './components/Login'
 import store from './store'
@@ -45,7 +46,8 @@ class App extends React.Component {
   render() {
     if (!this.state.loading) {
       return (
-
+        <>
+        <div>{store.getState().loggedIn.activeUser}</div>
         <Router>
           <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="/">Ecommerce</a>
@@ -81,9 +83,10 @@ class App extends React.Component {
             <Route path="/Cart"
               render={() => (<Cart products={store.getState().cart} />)} />
             <Route path="/product/:id" component={ProductInfo} />
+            <Route path = "/CreateAccount" component={CreateAccount}/>
           </Switch>
         </Router >
-       
+       </>
 
       )
     }
