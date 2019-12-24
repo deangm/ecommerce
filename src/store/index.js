@@ -39,9 +39,14 @@ function loginReducer(state = accounts, action) {
                 return state;
             }
         case "CREATE_ACCOUNT":
-            console.log(action.newAccount);
             let newState = state;
-            newState.users.push(action.newAccount)
+            newState.users.push(action.newAccount);
+            return newState;
+        case "LOGOUT":
+            return {
+                ...state,
+                activeUser: ""
+            }
         default:
             return state;
     }

@@ -43,13 +43,18 @@ class App extends React.Component {
     store.subscribe(() => this.forceUpdate())
   }
 
+  handleLogOut = () => {
+    store.dispatch({
+      type: "LOGOUT"
+    })
+  }
   render() {
     if (!this.state.loading) {
       return (
         <>
         <Router>
           <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand" href="/">{store.getState().loggedIn.activeUser ?  `Log Out: ${store.getState().loggedIn.activeUser}` : "Not Logged In"} </a>
+            <Link onClick = {this.handleLogOut} className="navbar-brand" to="/">{store.getState().loggedIn.activeUser ?  `Log Out: ${store.getState().loggedIn.activeUser}` : "Not Logged In"} </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon">A</span>
             </button>

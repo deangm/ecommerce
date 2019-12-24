@@ -38,7 +38,7 @@ class CartItem extends React.Component {
                             </Link>
 
 
-                            <div> onClick={this.handleRemoveCart} className="btn btn-secondary">Remove</div>
+                            <div onClick={this.handleRemoveCart} className="btn btn-secondary">Remove</div>
                         </div>
 
                     </div>

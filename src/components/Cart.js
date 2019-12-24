@@ -5,7 +5,10 @@ import store from '../store'
 class Cart extends React.Component {
 
     renderCart = () => {
-        return this.props.products.map((p, index) => <CartItem product={p} key={index} />)
+        let items = this.props.products.filter((item) => {
+            return item.user === store.getState().loggedIn.activeUser
+        })
+         return items.map((p, index) => <CartItem product={p} key={index} />)
     }
 
     render() {

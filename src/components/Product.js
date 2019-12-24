@@ -15,7 +15,10 @@ class Product extends React.Component {
     handleAddCart = () => {
         store.dispatch({
             type: "ADD_CART",
-            product: this.props.product
+            product: {
+                ...this.props.product,
+                user: store.getState().loggedIn.activeUser
+            }
 
         })
 
