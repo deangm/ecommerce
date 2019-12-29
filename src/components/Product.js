@@ -39,7 +39,7 @@ class Product extends React.Component {
                         <h5 className="card-title">{title}</h5>
 
                         <div className="cartInfo">
-                            <div>{rating} out of 5 -> {Math.floor(Math.random() * 100)} reviews</div>
+                            <div className="rating">{rating} out of 5 -> {Math.floor(Math.random() * 100)} reviews</div>
                             <div className="productPrice">Price: ${price}</div>
                             <div className = "buttonCont">
                                 <Link style={{ textDecoration: 'none' }} className="" to={`/product/${this.props.product.id}`}>

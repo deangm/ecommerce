@@ -4,7 +4,7 @@ import store from "../store"
 class ProductInfo extends React.Component {
 
     findProduct = () => {
-        return store.getState().products.filter(p => p.id === this.props.match.params.id
+        return store.getState().products.filter(p => p.id == this.props.match.params.id
         )
     }
 

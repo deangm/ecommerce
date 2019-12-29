@@ -16,6 +16,9 @@ $whiteText: #FFFFFF;
 }
 
 .productCont{
+  .rating{
+    color:$secondaryText;
+  }
   .productPrice{
     font-size:20px;
   }

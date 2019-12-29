@@ -1,6 +1,9 @@
 #root {
   height: 100%; }
 
+.productCont .rating {
+  color: #757575; }
+
 .productCont .productPrice {
   font-size: 20px; }
 
