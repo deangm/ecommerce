@@ -1,11 +1,21 @@
 #root {
   height: 100%; }
 
+.productCont .productPrice {
+  font-size: 20px; }
+
+.productCont .card-title {
+  font-size: 16px; }
+
 .productCont .card {
   width: 18rem;
   margin: 40px;
   border-radius: 10px;
-  padding: 20px; }
+  padding: 20px;
+  max-height: 400px; }
+
+.productCont .card-body {
+  padding: 0; }
 
 .productInfoCont {
   display: flex;
@@ -35,7 +45,9 @@ body, html {
 
 .buttonCont {
   display: flex;
-  justify-content: space-around; }
+  align-items: center;
+  justify-content: space-between;
+  width: 150px; }
 
 .link {
   background-color: lightblue; }
@@ -106,3 +118,16 @@ nav {
   .search button {
     width: 80px;
     background-color: #757575; }
+
+.cartInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px; }
+  .cartInfo div {
+    padding: 12px; }
+
+.addCart {
+  color: #C2185B; }
+  .addCart:hover {
+    color: #F8BBD0; }

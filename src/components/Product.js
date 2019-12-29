@@ -38,20 +38,18 @@ class Product extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
 
-                        <div>Price: {price} Rating: {rating}</div>
+                        <div className="cartInfo">
+                            <div>{rating} out of 5 -> {Math.floor(Math.random() * 100)} reviews</div>
+                            <div className="productPrice">Price: ${price}</div>
+                            <div className = "buttonCont">
+                                <Link style={{ textDecoration: 'none' }} className="" to={`/product/${this.props.product.id}`}>
+                                    Info
+                                </Link>
+                                <div onClick={this.handleAddCart} className="addCart">Add Cart</div>
+                            </div>
 
 
-                        <div className="buttonCont">
-
-
-                            <Link style={{ textDecoration: 'none' }} className="btn btn-primary" to={`/product/${this.props.product.id}`}>
-                                Info
-                            </Link>
-
-
-                            <div onClick={this.handleAddCart} className="btn btn-secondary">Add Cart</div>
                         </div>
-
                     </div>
                 </div>
             </div>

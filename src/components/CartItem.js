@@ -20,7 +20,7 @@ class CartItem extends React.Component {
     }
 
     render() {
-        const { title, img} = this.props.product;
+        const { title, img, rating, price } = this.props.product;
         return (
 
             <div className="productCont">
@@ -28,6 +28,12 @@ class CartItem extends React.Component {
                     <img src={img} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
+
+                        <div className="cartInfo">
+                            <div>{rating} / 5</div>
+                            <div>${price}</div>
+                        </div>
+
 
 
                         <div className="buttonCont">

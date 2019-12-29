@@ -29,7 +29,7 @@ class Cart extends React.Component {
                             My Cart
                          </div>
                         <div>
-                            Total: {total}
+                            Cart Total: {total}
                          </div>
                     </div>
 
