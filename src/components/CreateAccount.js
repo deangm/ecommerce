@@ -1,5 +1,6 @@
 import React from 'react'
 import store from "../store"
+import { Link } from "react-router-dom"
 
 class CreateAccount extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class CreateAccount extends React.Component {
                     <input value={this.state.password} onChange={this.handlePasswordChange} placeholder="password"></input>
                 </div>
                 <div>
-                    <button onClick={this.handleCreateAccountClick}>Create My Account</button>
+                    <Link to="/Login" onClick={this.handleCreateAccountClick}>Create My Account</Link>
                 </div>
             </div>
         )

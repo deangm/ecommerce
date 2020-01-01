@@ -55,7 +55,7 @@ class Login extends React.Component {
                         <label>UserName:</label>
                         <input onChange={this.userNameHandler} value={this.state.username} placeholder={"username"}></input>
                         <label>Password</label>
-                        <input onChange={this.passwordHandler} value={this.state.password} placeholder={"password"}></input>
+                        <input type="password" onChange={this.passwordHandler} value={this.state.password} placeholder={"password"}></input>
                     </div>
                     <button className = "btn btn-primary" onClick={this.handleLogin}>Log In</button>
                     <Link to = "/CreateAccount">
