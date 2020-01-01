@@ -65,7 +65,9 @@ function productReducer(state = [], action) {
 function cartReducer(state = [], action) {
     switch (action.type) {
         case "ADD_CART":
-            let exists = state.filter(p => p == action.product);
+            
+            let exists = state.filter(p => p.id == action.product.id);
+         
             if (exists.length == 0) {
                 return state.concat(action.product)
             }
