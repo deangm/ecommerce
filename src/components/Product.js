@@ -31,7 +31,6 @@ class Product extends React.Component {
         const { title, img, rating, price } = this.props.product;
 
         return (
-
             <div className="productCont">
                 <div className="card"  >
                     <img src={img} className="card-img-top" alt="..." />
@@ -41,14 +40,35 @@ class Product extends React.Component {
                         <div className="cartInfo">
                             <div className="rating">{rating} out of 5 -> {Math.floor(Math.random() * 100)} reviews</div>
                             <div className="productPrice">Price: ${price}</div>
-                            <div className = "buttonCont">
+                            <div className="buttonCont">
                                 <Link style={{ textDecoration: 'none' }} className="" to={`/product/${this.props.product.id}`}>
                                     Info
                                 </Link>
-                                <div onClick={this.handleAddCart} className="addCart">Add Cart</div>
+                                <div data-toggle="modal" data-target="#exampleModal" onClick={this.handleAddCart} className="addCart">Add Cart</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Added to Cart</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div>{title}</div>
+                                    <img src = {img}/>
+                                </div>
 
+                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
