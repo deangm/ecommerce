@@ -28,7 +28,7 @@ class Product extends React.Component {
 
 
     render() {
-        const { title, img, rating, price } = this.props.product;
+        const { id, title, img, rating, price } = this.props.product;
 
         return (
             <div className="productCont">
@@ -44,13 +44,13 @@ class Product extends React.Component {
                                 <Link style={{ textDecoration: 'none' }} className="" to={`/product/${this.props.product.id}`}>
                                     Info
                                 </Link>
-                                <div data-toggle="modal" data-target="#exampleModal" onClick={this.handleAddCart} className="addCart">Add Cart</div>
+                                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={this.handleAddCart} className="addCart">Add Cart</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id={`exampleModal${id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
