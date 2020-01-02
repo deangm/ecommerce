@@ -41,16 +41,21 @@ class CreateAccount extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <input value={this.state.username} onChange={this.handleUsernameChange} placeholder="username"></input>
-                    <input value={this.state.password} onChange={this.handlePasswordChange} placeholder="password"></input>
+                <div className="subTitle">
+                    Sign Up!
                 </div>
-                <div>
-                    <Link to="/Login" onClick={this.handleCreateAccountClick}>Create My Account</Link>
+                <div className="loginCont">
+                        <div className="inputCont">
+                            <input value={this.state.username} onChange={this.handleUsernameChange} placeholder="username"></input>
+                            <input value={this.state.password} onChange={this.handlePasswordChange} placeholder="password"></input>
+                        </div>
+
+                        <Link to="/Login" onClick={this.handleCreateAccountClick} className="actionBtn">Create My Account</Link>
                 </div>
             </div>
-        )
-    }
-}
 
+                )
+            }
+        }
+        
 export default CreateAccount;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import store from '../store';
+import { Link } from "react-router-dom"
 
 
 
@@ -84,9 +85,9 @@ class Login extends React.Component {
                             <input type="password" onChange={this.passwordHandler} value={this.state.password} placeholder={"password"}></input>
                         </div>
                         <button className="btn btn-primary" onClick={this.handleLogin}>Log In</button>
-                        <div>
-                            Create Account
-                        </div>
+                       <Link className = "actionBtn" to="/CreateAccount">
+                           Create Account
+                       </Link>
                     </div>
                 </div>
 

@@ -44,11 +44,14 @@ class ProductInfo extends React.Component {
                                 <h5 className="card-title">{title}</h5>
                                 <p className="card-text">{description}</p>
                                 <p className="card-text"><small class="text-muted">{rating} out of 5 stars</small></p>
+                                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={() => this.handleAddCart(product)} className="actionBtn infoBtn">Add Cart</div>
                             </div>
+                            
                         </div>
+                       
                     </div>
                 </div>
-                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={() => this.handleAddCart(product)} className="addCart">Add Cart</div>
+                
                 <Modal message="Added to Cart" id = {id} img = {img} title={title} />
             </div>
         )
