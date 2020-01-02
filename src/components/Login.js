@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import store from '../store';
-import { Link } from 'react-router-dom';
+
 
 
 class Login extends React.Component {
@@ -11,8 +11,12 @@ class Login extends React.Component {
             username: "",
             password: ""
         }
+        
+    }
+    componentDidMount(){
         store.subscribe(() => this.forceUpdate())
     }
+
 
     handleLogin = () => {
         store.dispatch({
@@ -67,11 +71,6 @@ class Login extends React.Component {
             return (
 
 
-
-
-
-
-
                 <div className="cont">
                     <div className="subTitle">
                         Welcome Back!
@@ -85,39 +84,11 @@ class Login extends React.Component {
                             <input type="password" onChange={this.passwordHandler} value={this.state.password} placeholder={"password"}></input>
                         </div>
                         <button className="btn btn-primary" onClick={this.handleLogin}>Log In</button>
-                        <div data-toggle="modal" data-target="#exampleModalCenter">
+                        <div>
                             Create Account
                         </div>
                     </div>
-
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div>
-                                        <div>
-                                            <input value={this.state.username} onChange={this.handleUsernameChange} placeholder="username"></input>
-                                            <input value={this.state.password} onChange={this.handlePasswordChange} placeholder="password"></input>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <div onClick={this.handleCreateAccountClick} data-dismiss="modal">Create My Account</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-
-
-
 
             )
         }

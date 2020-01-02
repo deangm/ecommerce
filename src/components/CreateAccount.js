@@ -23,8 +23,6 @@ class CreateAccount extends React.Component {
                 password: this.state.password,
             }
         })
-
-        console.log(store.getState().loggedIn)
     }
 
     handleUsernameChange = (e) => {

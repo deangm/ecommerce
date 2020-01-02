@@ -1,5 +1,6 @@
 import React from "react";
 import store from "../store"
+import Modal from "./Modal"
 
 class ProductInfo extends React.Component {
 
@@ -8,10 +9,25 @@ class ProductInfo extends React.Component {
         )
     }
 
+    handleAddCart = (product) => {
+
+        store.dispatch({
+            type: "ADD_CART",
+            product: {
+                ...product[0],
+                user: store.getState().loggedIn.activeUser
+            }
+
+        })
+
+    }
+
+    
+
     render() {
 
         const product = this.findProduct();
-        const { title, img, rating, description } = product[0];
+        const { id, title, img, rating, description } = product[0];
 
         let cardStyle = {
             maxWidth: "900px"
@@ -32,6 +48,8 @@ class ProductInfo extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={() => this.handleAddCart(product)} className="addCart">Add Cart</div>
+                <Modal message="Added to Cart" id = {id} img = {img} title={title} />
             </div>
         )
     }

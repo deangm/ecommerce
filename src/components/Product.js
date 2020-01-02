@@ -3,7 +3,7 @@ import {
 
     Link,
 } from 'react-router-dom'
-
+import Modal from "./Modal"
 
 import store from '../store';
 // import ProductInfo from './ProductInfo'
@@ -44,34 +44,13 @@ class Product extends React.Component {
                                 <Link style={{ textDecoration: 'none' }} className="" to={`/product/${this.props.product.id}`}>
                                     Info
                                 </Link>
-                                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={this.handleAddCart} className="addCart">Add Cart</div>
+                                <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={this.handleAddCart} className="actionBtn">Add Cart</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="modal fade" id={`exampleModal${id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Added to Cart</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div>
-                                    <div>{title}</div>
-                                    <img src = {img}/>
-                                </div>
-
-                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Modal message="Added to Cart" id = {id} img = {img} title={title} />
             </div>
         )
     }
