@@ -13,6 +13,7 @@ import CreateAccount from './components/CreateAccount'
 import Cart from './components/Cart'
 import Login from './components/Login'
 import store from './store'
+import { saveToLocal, loadLocal } from './helper'
 
 
 
@@ -40,7 +41,8 @@ class App extends React.Component {
         loading: false
       })
     })
-    store.subscribe(() => this.forceUpdate())
+    store.subscribe(() => this.forceUpdate());
+    store.subscribe(() => saveToLocal(store.getState()))
   }
 
   handleLogOut = () => {

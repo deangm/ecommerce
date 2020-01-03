@@ -14,9 +14,6 @@ class Login extends React.Component {
         }
         
     }
-    componentDidMount(){
-        store.subscribe(() => this.forceUpdate())
-    }
 
 
     handleLogin = () => {

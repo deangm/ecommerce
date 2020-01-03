@@ -1,15 +1,11 @@
 import { createStore, combineReducers } from 'redux';
+import { loadLocal } from '../helper/index'
 
-const accounts = {
-    activeUser: "",
-    users: [
-        {
-            username: "Mikey",
-            password: "Hello",
-        }
 
-    ]
-}
+let stateObj = loadLocal();
+console.log(stateObj);
+const accounts = stateObj.loggedIn;
+const cart = stateObj.cart;
 
 
 const reducer = combineReducers({
@@ -62,11 +58,13 @@ function productReducer(state = [], action) {
     }
 }
 
-function cartReducer(state = [], action) {
+function cartReducer(state = cart, action) {
     switch (action.type) {
         case "ADD_CART":
             
-            let exists = state.filter(p => p.id == action.product.id);
+            let currentUserCart = state.filter(p => p.user == action.product.user);
+
+            let exists = currentUserCart.filter(p => p.id == action.product.id);
          
             if (exists.length == 0) {
                 return state.concat(action.product)
