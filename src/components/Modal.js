@@ -34,7 +34,7 @@ class Modal extends React.Component{
                             <div className="modal-body">
                                 <div>
                                     <div>{this.props.title}</div>
-                                    <img src = {this.props.img}/>
+                                    <img src = {this.props.img} alt = "product"/>
                                 </div>
 
                              </div>

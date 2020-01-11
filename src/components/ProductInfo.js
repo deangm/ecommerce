@@ -43,7 +43,7 @@ class ProductInfo extends React.Component {
                             <div className="card-body">
                                 <h5 className="card-title">{title}</h5>
                                 <p className="card-text">{description}</p>
-                                <p className="card-text"><small class="text-muted">{rating} out of 5 stars</small></p>
+                                <p className="card-text"><small className="text-muted">{rating} out of 5 stars</small></p>
                                 <div data-toggle="modal" data-target={`#exampleModal${id}`} onClick={() => this.handleAddCart(product)} className="actionBtn infoBtn">Add Cart</div>
                             </div>
                             

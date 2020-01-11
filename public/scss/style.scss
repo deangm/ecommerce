@@ -1,10 +1,10 @@
 
 
 
-$primaryColor: lightblue;
-$lightPrimary: #F8BBD0;
-$darkPrimary: #C2185B;
-$secondaryColor: #03A9F4;
+$primaryColor: #CFD8DC;
+$lightPrimary: #607D8B;
+$darkPrimary: #FF5722;
+$secondaryColor: #455A64;
 $primaryText: #212121;
 $secondaryText: #757575;
 $whiteText: #FFFFFF;
@@ -142,6 +142,11 @@ $whiteText: #FFFFFF;
       justify-content: center;;
       align-items: center;
       display:flex;
+      form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
       input{
         margin-bottom:20px;
         border-radius: 5px;
@@ -179,3 +184,62 @@ $whiteText: #FFFFFF;
     color: $lightPrimary;
    }
  }
+
+ .cartTotalCont{
+
+   .cartTotal{
+    font-size: 20px;
+    margin: 10px;
+  }
+  .checkout{
+    margin:10px;
+    font-size:20px;
+  }
+ }
+.checkoutCont{
+  display:flex;
+  justify-content: space-between;
+ 
+
+  .checkoutForm{
+    width:70%;
+    padding: 60px;
+  }
+  .checkoutList{
+   
+    margin: 60px auto;
+    .checkoutItem{
+      border: 1px solid black;
+      display:flex;
+      align-items: center;;
+      div{
+        max-width: 240px;
+        padding:5px;
+      }
+      .checkoutPrice{
+       margin-left:auto;
+      }
+    }
+  }
+}
+#alert{
+    display:none;
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    padding: 30px;
+}
+#alertCreateAccount1{
+    display:none;
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    padding: 30px;
+}
+#alertCreateAccount2{
+  display:none;
+  width: 30%;
+  margin: 10px auto;
+  text-align: center;
+  padding: 30px;
+}

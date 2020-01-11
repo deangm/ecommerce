@@ -3,7 +3,6 @@ import { loadLocal } from '../helper/index'
 
 
 let stateObj = loadLocal();
-console.log(stateObj);
 const accounts = stateObj.loggedIn;
 const cart = stateObj.cart;
 
@@ -80,6 +79,11 @@ function cartReducer(state = cart, action) {
             })
        
             return newState
+        
+        case "CLEAR":
+           
+            return state.filter(p => p.user != action.user);
+
         default:
             return state;
     }

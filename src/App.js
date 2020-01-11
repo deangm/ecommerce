@@ -12,8 +12,11 @@ import ProductInfo from './components/ProductInfo'
 import CreateAccount from './components/CreateAccount'
 import Cart from './components/Cart'
 import Login from './components/Login'
+import Checkout from './components/Checkout'
+import Confirmation from './components/Confirmation'
 import store from './store'
-import { saveToLocal, loadLocal } from './helper'
+import { saveToLocal } from './helper'
+
 
 
 
@@ -54,6 +57,7 @@ class App extends React.Component {
     if (!this.state.loading) {
       return (
         <>
+        <div></div>
         <Router>
           <nav className="navbar navbar-expand-lg">
             <Link onClick = {this.handleLogOut} className="navbar-brand" to="/">{store.getState().loggedIn.activeUser ?  `Log Out: ${store.getState().loggedIn.activeUser}` : "Not Logged In"} </Link>
@@ -90,15 +94,22 @@ class App extends React.Component {
               render={() => (<Cart products={store.getState().cart} />)} />
             <Route path="/product/:id" component={ProductInfo} />
             <Route path = "/CreateAccount" component={CreateAccount}/>
+            <Route path = "/Checkout/:user" component = {Checkout} />
+            <Route path = "/Confirmation" component = {Confirmation} />
           </Switch>
         </Router >
+       
        </>
 
       )
     }
     else {
       return (
+       
+    
+      
         <div>Loading</div>
+    
       );
     }
 
